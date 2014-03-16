@@ -1,0 +1,148 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	text-align: center;
+	background: rgba(200,200,200,0.2);
+}
+
+#wrapper
+{
+	text-align: left;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#topnav
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to bottom, rgb(200,220,200), rgb(220,240,220));
+	padding: 0.2em;
+}
+
+#topnav form
+{
+	display: inline;
+	padding: 0 2em;
+}
+
+#topnav input[type="text"]
+{
+	padding: 0.1em;
+	width: 30%;
+}
+
+#topnav a, #leftnav a
+{
+	display: inline-block;
+	text-decoration: none;
+	padding: 0 0.3em;
+	color: rgba(20,40,20,0.7);
+	transition: border-bottom 0.2s, border-left 0.2s;
+	border-bottom: 0 solid rgba(20, 40, 20, 0);
+	border-right: 0 solid rgba(20, 40, 20, 0);
+}
+
+#topnav a:hover
+{
+	border-bottom: 3px solid rgba(20, 40, 20, 0.7);
+}
+
+ #leftnav a:hover
+{
+	border-left: 3px solid rgba(20, 40, 20, 0.7);
+}
+ 
+#leftnav
+{
+	position: fixed;
+	left: 0;
+	top: 10%;
+	height: 80%;
+	background: linear-gradient(to right, rgb(200,210,200), rgb(220,240,220));
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+	padding: 0.5em;
+	width: 7em;
+}
+#feed
+{
+	padding: 2.2em;
+	width: 70%;
+	margin: 0.2em auto;
+	background: rgba(200,200,200,0.2);
+}
+#sidebar
+{
+	position: fixed;
+	right: 0;
+	top: 10%;
+	height: 80%;
+	background: linear-gradient(to left, rgb(200,210,200), rgb(220,240,220));
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+	padding: 0.5em;
+}
+#footer
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0.2em;
+	text-align: center;
+	background: rgba(200,200,200,0.3);
+}
+
+.rightAlign
+{
+	text-align: right;
+	float: right;
+}
+
+.fullWidth
+{
+	width: 100%;
+}
+
+input[type="submit"]
+{
+	padding: 0.1em;
+	margin: 0.2em;
+	background: rgba(200,255,200,0.3);
+}
+
+input[type="submit"]:hover
+{
+	background: rgba(180,235,180,0.3);
+}
+
+input, textarea
+{
+	border: 3px solid rgba(100,150,100,0.3);
+	border-radius: 0.5em;
+}
+
+#post
+{
+	background: rgba(100,50,50,0.05);
+	border: 2px solid rgba(100,50,50,0.05);
+	margin: 0.2em;
+	padding: 0.1em;
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+}
+#reply
+{
+	background: rgba(50,100,50,0.05);
+	border: 2px solid rgba(100,50,50,0.05);
+	margin: 0.2em;
+	padding: 0.1em;
+}
