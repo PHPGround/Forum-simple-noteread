@@ -26,6 +26,7 @@
 			echo($error);
 		}
 	}
+	echo('Your account id is: '.$userid);
 ?>
 <form method="post">
 	<input type="password" name="oldpass" placeholder="Old password">
