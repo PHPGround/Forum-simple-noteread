@@ -105,8 +105,8 @@
 			echo('<div id="post">');
 			echo('#'.$id.' ('.$postername.')['.$privilege.'] @ '.$date.'<br>');
 			$text = nl2br($text);
-			$text = preg_replace('/('.htmlentities('>').'.*)/', '<div class="quote">\1</div>', $text);
-			echo($text);
+			$text = preg_replace('/('.htmlentities('>').'.*)/', '<span class="quote">\1</span>', $text);
+			echo($text.'<br>');
 			echo('<a href="'.$feedurl.'&t='.$id.'">>Replies</a>');
 			echo('</div><hr>');
 		}

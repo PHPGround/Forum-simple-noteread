@@ -23,6 +23,9 @@
 		case 'logout':
 			$page = 'inc/logout.php';
 			break;
+		case 'account':
+			$page = 'inc/account.php';
+			break;
 		}
 	}elseif(isset($_GET['f'])&&!empty($_GET['f'])){
 		switch($_GET['f']){

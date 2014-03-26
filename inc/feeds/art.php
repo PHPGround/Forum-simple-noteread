@@ -41,7 +41,9 @@
 			echo('<a href="'.$feedurl.'">Back</a>');
 			echo('<div id="post">');
 			echo('#'.$threadid.' ('.$threadop.')['.$privilege.'] @ '.$date.'<br>');
-			echo($thread.'<br>');
+			$thread = nl2br($thread);
+			$thread = preg_replace('/('.htmlentities('>').'.*)/', '<div class="quote">\1</div>', $thread);
+			echo($thread);
 			echo('</div><hr>');
 			if(!$loggedin){
 				printf('You have to be logged in to post');
@@ -65,7 +67,9 @@
 				$date = $row['date'];
 				echo('<div id="reply">');
 				echo('<a id="'.$id.'" href="'.$feedurl.'&t='.$threadid.'#'.$id.'">##'.$id.'</a> ('.$postername.')['.$privilege.'] @ '.$date.'<br>');
-				echo($text.'<br>');
+				$text = nl2br($text);
+				$text = preg_replace('/('.htmlentities('>').'.*)/', '<div class="quote">\1</div>', $text);
+				echo($text);
 				echo('</div><hr>');
 			}
 		}else{
@@ -100,6 +104,8 @@
 			$date = $row['date'];
 			echo('<div id="post">');
 			echo('#'.$id.' ('.$postername.')['.$privilege.'] @ '.$date.'<br>');
+			$text = nl2br($text);
+			$text = preg_replace('/('.htmlentities('>').'.*)/', '<span class="quote">\1</span>', $text);
 			echo($text.'<br>');
 			echo('<a href="'.$feedurl.'&t='.$id.'">>Replies</a>');
 			echo('</div><hr>');
