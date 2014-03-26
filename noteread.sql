@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2014 at 01:29 AM
+-- Generation Time: Mar 20, 2014 at 03:01 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -19,6 +19,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `users_noteread`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `art_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `art_comments` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `opid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `art_feed`
+--
+
+CREATE TABLE IF NOT EXISTS `art_feed` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -52,6 +81,93 @@ CREATE TABLE IF NOT EXISTS `feed` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pol_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `pol_comments` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `opid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pol_feed`
+--
+
+CREATE TABLE IF NOT EXISTS `pol_feed` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rand_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `rand_comments` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `opid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rand_feed`
+--
+
+CREATE TABLE IF NOT EXISTS `rand_feed` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tech_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `tech_comments` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `opid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tech_feed`
+--
+
+CREATE TABLE IF NOT EXISTS `tech_feed` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `posterid` int(64) unsigned NOT NULL,
+  `text` varchar(1024) CHARACTER SET utf8 NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -59,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(64) CHARACTER SET utf8 NOT NULL,
   `email` varchar(64) CHARACTER SET utf8 NOT NULL,
+  `privilege` varchar(64) CHARACTER SET utf8 NOT NULL,
   `password` varchar(512) CHARACTER SET utf8 NOT NULL,
   `salt` varchar(512) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)

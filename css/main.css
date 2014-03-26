@@ -70,13 +70,16 @@ body
 	border-top-right-radius: 1em;
 	border-bottom-right-radius: 1em;
 	padding: 0.5em;
-	width: 7em;
+	width: 9em;
+	transition: font-size 0.2s, background 0.2s;
 }
+
 #feed
 {
 	padding: 2.2em;
 	width: 70%;
 	margin: 0.2em auto;
+	margin-top: 3em;
 	background: rgba(200,200,200,0.2);
 }
 #sidebar
@@ -144,5 +147,21 @@ input, textarea
 	background: rgba(50,100,50,0.05);
 	border: 2px solid rgba(100,50,50,0.05);
 	margin: 0.2em;
+	padding: 0.1em;
+}
+
+li
+{
+	margin-left: 1.5em;
+}
+
+.error
+{
+	color: red;
+}
+
+.quote
+{
+	color: rgb(100,150,100);
 	padding: 0.1em;
 }

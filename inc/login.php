@@ -1,5 +1,5 @@
 <?php
-	$errorMsg = 'Wrong email/password conbination';
+	$errorMsg = '<p class="error">Wrong email/password conbination</p>';
 	if(isset($_POST['email'])&&!empty($_POST['email'])){
 		$pass = mysqli_real_escape_string($sqli, $_POST['password']);
 		$email = mysqli_real_escape_string($sqli, $_POST['email']);

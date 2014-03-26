@@ -1,7 +1,18 @@
 <?php
 	require('inc/common.php');
 	$page = 'inc/feed.php';
-	if(isset($_GET['p'])&&!empty($_GET['p'])){
+	if(isset($_GET['siterules'])){
+		$page = 'websiterules.php';
+	}
+	if(isset($_GET['logs'])){
+		$page = 'logs/all.administration.log';
+	}elseif(isset($_GET['useradmin'])){
+		$page = 'inc/useradmin.php';
+	}elseif(isset($_GET['admin'])){
+		$page = 'inc/admin.php';
+	}elseif(isset($_GET['search'])&&!empty($_GET['search'])){
+		$page = 'inc/search.php';
+	}elseif(isset($_GET['p'])&&!empty($_GET['p'])){
 		switch($_GET['p']){
 		case 'register':
 			$page = 'inc/register.php';
@@ -27,6 +38,9 @@
 		case 'rand':
 			$page = 'inc/feeds/rand.php';
 			break;
+		case 'pol':
+			$page = 'inc/feeds/pol.php';
+			break;
 		}
 	}
 ?>
@@ -45,7 +59,10 @@
 					<input type="text" placeholder="Search." name="search" />
 				</form>
 				<?php if($loggedin){ ?>
-				You're logged in  as: <?php echo($user); ?>
+				You're logged in  as: <?php echo($user); ?>. Your privilege: <?php echo($currentprivileges); ?>. 
+				<?php 
+					if($currentprivileges=="admin") echo('<a href="./?admin">Thread Administration</a> <a href="./?useradmin">User Administration</a>');
+				?>
 				<div class="rightAlign">
 					
 					<a href="./">Feed</a>
@@ -56,18 +73,19 @@
 			</div>
 			<div id="leftnav">
 				<?php if(!$loggedin){ ?>
-				<a href="./?p=login">Login</a>
-				<a href="./?p=register">Register</a>
+				<a href="./?p=login">Login</a><br>
+				<a href="./?p=register">Register</a><br>
 				<?php } ?>
 				<h3>Feeds:</h3>
-				<a href="./">General</a>
+				<a href="./">General</a><br>
 				<p>Interests:</p>
-				<a href="./?f=vid">Video Games</a>
-				<a href="./?f=tech">Technology</a>
+				<a href="./?f=vid">Video Games</a><br>
+				<a href="./?f=tech">Technology</a><br>
 				<p>Creative:</p>
-				<a href="./?f=art">Art/Critique</a>
-				<p>Misc:</p>
-				<a href="./?f=rand">Random</a>
+				<a href="./?f=art">Art/Critique</a><br>
+				<p>Misc: (NSFW)</p>
+				<a href="./?f=rand">Random</a><br>
+				<a href="./?f=pol">Politically Incorrect</a><br>
 			</div>
 			<div id="feed">
 				<?php

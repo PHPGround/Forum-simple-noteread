@@ -7,7 +7,7 @@
 	
 	$sqli = mysqli_connect($dbaddress, $dbuser, $dbpass, $db);
 	if (mysqli_connect_errno()) {
-		printf("Connection Failed: %s\n", mysqli_connect_error());
+		printf("<p class=\"error\">Connection Failed: %s\n </p>", mysqli_connect_error());
 		exit();
 	}
 	
@@ -16,6 +16,8 @@
 		$loggedin = true;
 		$userid = $_SESSION['id'];
 		$user = mysqli_fetch_array(mysqli_query($sqli, "SELECT username FROM users WHERE id='".$userid."'"))[0];
+		$currentprivileges = mysqli_query($sqli, "SELECT privilege FROM users WHERE id='".$userid."'");
+		$currentprivileges = mysqli_fetch_array($currentprivileges)[0];
 	}
 	
 ?>
